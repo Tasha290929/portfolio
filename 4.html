@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href=".\Images\51.png">
+    <link rel="stylesheet" href="css\css.css">
+    <link rel="stylesheet" href="addaptive.css" />
+    <title>Кот в сапогах 2 : Последнее желание</title>
+    <style>
+        body {
+            margin-top: 300px;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            font-family: sans-serif;
+            min-height: 100%;
+            position: relative;
+            min-width: 610px;
+        }
+    </style>
+    <style type="text/css">
+        .table {
+            display: table;
+            border-collapse: collapse;
+            gap: 10px;
+            width: 100%;
+            height: 150px;
+            background-image: url('Images/5.jpg');
+        }
+
+        .row {
+            padding: 20px;
+            display: table-row;
+        }
+
+        .cell {
+            display: table-cell;
+            border: 1px solid black;
+            width: 240px;
+            height: 169px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-clip: content-box;
+            transition: all 1s ease;
+        }
+
+            .cell:hover {
+                transform: scale(1.1);
+                box-shadow: 0 10px 15px darkviolet;
+            }
+
+        h1 {
+            padding: 10px 50px 0px 100px;
+        }
+
+        h3 {
+            padding: 0px 100px 0px 50px;
+        }
+
+        img {
+            width: 100%;
+            height: 300px;
+        }
+
+
+        .vi1 {
+            width: 90%;
+            display: block;
+            height: 525px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 20%;
+            transition: transform 2s ease;
+            margin-left: 5%;
+        }
+
+        .video-container {
+            position: relative;
+            text-align: center;
+           
+        }
+
+
+
+            .video-container:hover .vi1 {
+                transform: scale(0.7);
+                box-shadow: 0 10px 15px darkviolet;
+            }
+
+         
+
+
+        .text-container {
+            margin-top: 550px; /* значение равное высоте видео */
+        }
+        .menu {
+            display: flex;
+            justify-content: center; /* выравнивание по центру */
+            align-items: center; /* выравнивание по вертикали */
+            background-color: #333; /* цвет фона */
+            padding: 10px; /* внутренний отступ */
+        }
+
+        .cell-text {
+            flex: 1;
+            text-align: center; /* выравнивание текста по центру */
+        }
+
+            .cell-text a {
+                text-decoration: none; /* убираем подчеркивание ссылок */
+                color: white; /* цвет текста */
+                font-weight: bold; /* жирный шрифт */
+                padding: 10px; /* внутренний отступ */
+            }
+
+                .cell-text a:hover {
+                    background-color: white; /* цвет фона при наведении */
+                    color: #333; /* цвет текста при наведении */
+                }
+
+              
+
+
+        @media screen and (min-width: 1225px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1225px) {
+            .table {
+                display: none;
+            }
+
+            .cell {
+                width: 100%;
+                height: 200px;
+                background-color: #fff;
+                border: 1px solid #000;
+                text-align: center;
+                font-size: 24px;
+                line-height: 200px;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        function changeBgImage(cell, img) {
+            cell.style.backgroundImage = "url('" + img + "')";
+        }
+
+        function restoreBgImage(cell) {
+            cell.style.backgroundImage = "";
+        }
+
+        function toggleTableBorder() {
+            var table = document.getElementById("table");
+            if (table.style.border == "none") {
+                table.style.border = "9px solid black";
+            } else {
+                table.style.border = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+    <header>
+        <div>
+            <img src="Images\p.jpg" />
+            <div class="video-text-container">
+                <p>Перрито</p>
+            </div>
+        </div>
+    </header>
+
+
+    <a id="heros">  </a>
+    <div class="table" id="table">
+        <div class="row">
+            <a href="1.html" target="_blank">
+                <div class="cell" onclick="changeBgImage(document.getElementById('table'), 'Images/1.1.jpg')" onmouseover="changeBgImage(this, 'Images/1.jpg')" onmouseout="restoreBgImage(this)"></div>
+            </a>
+
+            <a href="2.html" target="_blank">
+                <div class="cell" onclick="changeBgImage(document.getElementById('table'), 'Images/3.jpg')" onmouseover="changeBgImage(this, 'Images/3.jpg')" onmouseout="restoreBgImage(this)"></div>
+            </a>
+            <a href="3.html" target="_blank">
+                <div class="cell" onclick="changeBgImage(document.getElementById('table'), 'Images/4.jpg')" onmouseover="changeBgImage(this, 'Images/4.jpg')" onmouseout="restoreBgImage(this)"></div>
+            </a>
+            <a href="4.html" target="_blank">
+                <div class="cell" onclick="changeBgImage(document.getElementById('table'), 'Images/5.jpg')" onmouseover="changeBgImage(this, 'Images/5.jpg')" onmouseout="restoreBgImage(this)"></div>
+            </a>
+            <a href="5.html" target="_blank">
+                <div class="cell" onclick="changeBgImage(document.getElementById('table'), 'Images/6.jpg')" onmouseover="changeBgImage(this, 'Images/6.jpg')" onmouseout="restoreBgImage(this)"></div>
+            </a>
+            <a href="6.html" target="_blank">
+                <div class="cell" onclick="changeBgImage(document.getElementById('table'), 'Images/7.jpg')" onmouseover="changeBgImage(this, 'Images/7.jpg')" onmouseout="restoreBgImage(this)"></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="cell-text">
+            <a href="1.html" target="_blank">Волк</a>
+        </div>
+        <div class="cell-text">
+            <a href="2.html" target="_blank">Кот</a>
+        </div>
+        <div class="cell-text">
+            <a href="3.html" target="_blank">Златовласка</a>
+        </div>
+        <div class="cell-text">
+            <a href="4.html" target="_blank">Перрито</a>
+        </div>
+        <div class="cell-text">
+            <a href="5.html" target="_blank">Киса</a>
+        </div>
+        <div class="cell-text">
+            <a href="6.html" target="_blank">Джек</a>
+        </div>
+    </div>
+
+    <br />
+    <h1 class="mark">
+            На первый взгляд кажется, что Перрито выступает в роли комичного персонажа. Но по мере развития сюжета в итоге получается голосом разума, сумев продемонстрировать мораль, что без Звезды желаний можно было добиться своих целей.
+       
+    </h1>
+
+    <div class="video-container">
+        <video id="Video" class="vi1" src="Video\k2.mp4" autoplay loop muted></video>
+
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="text-container">
+        <h1>Описание</h1>
+        <h3>
+            Перрито — беззаботная, оптимистичная собака, мечтающая в будущем стать собакой-терапевтом. Он легко доверчивый и наивный, но никогда не перестает видеть лучшее во всех и во всём. Он рассматривает свое мрачное детство как игру и охотно рассказывает свою трагическую историю как забавный анекдот.
+
+            У Перрито чистое сердце, которое позволяет ему общаться с другими, такими как Кот, Китти, Златовласка и Три медведя, покоряя их своим добросердечным и бескорыстным характером. Он бесконечно предан и настойчив в своём стремлении к дружбе
+        </h3>
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h3>
+            <a href="base.html"> вернуться на главную</a>
+            <br />
+            <a href="com.html"> --> посмотреть комментарии </a>
+        </h3>
+    </div>
+</body>
+</html >
