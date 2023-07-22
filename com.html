@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отзывы о мультфильме "Кот в сапогах"</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+           
+          
+            height: 100vh;
+        }
+
+        .comments-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .comment {
+            background-color: gray;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+            .comment img {
+                max-width: 100px;
+                margin-right: 10px;
+                vertical-align: middle;
+                flex-shrink: 0;
+            }
+
+        .comment-content {
+            flex-grow: 1;
+        }
+
+        .comment p {
+            margin: 0;
+        }
+
+
+            .comment.green {
+                background-color: green;
+            }
+        .new-comment {
+            background-color: green;
+        }
+
+
+        .comment-form {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+            .comment-form input,
+            .comment-form textarea {
+                margin-bottom: 10px;
+            }
+
+        .expand-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .return-link {
+            position: fixed;
+            bottom: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="comments-container">
+        <h1>Отзывы о мультфильме "Кот в сапогах 2: Последнее желание"</h1>
+
+        <div class="comment">
+            <img src="path_to_image1.jpg" alt="Кот в сапогах">
+            <p>Отличный мультфильм! Я очень люблю этого кота. Он смешной и отважный!</p>
+        </div>
+
+        <div class="comment">
+            <img src="path_to_image2.jpg" alt="Кот в сапогах">
+            <p>Мои дети обожают этот мультфильм. Мы уже посмотрели его несколько раз и всегда с удовольствием.</p>
+        </div>
+
+        <div class="comment">
+            <img src="path_to_image2.jpg" alt="Кот в сапогах">
+            <p>
+                У мультфильма безумно стильная картинка. Авторы использовали популярную нынче систему анимации, когда на экране комбинируются трехмерные и двухмерные элементы. Здесь буквально каждый кадр это произведение искусства. От некоторых ракурсов и сцен натурально дух захватывает, настолько это талантливо снято и анимировано. Создатели буквально душу вложили в это произведение. А ведь это сиквел спиноффа к франшизе, вышедшей около двадцати лет назад!
+
+                Потрясающая работа! Рекомендую)
+
+            </p>
+        </div>
+
+        <button class="expand-button" id="expand-button">Добавить комментарий</button>
+
+        <div class="comment-form" id="comment-form">
+            <input id="nickname-input" type="text" placeholder="Ваш ник" required>
+            <textarea id="comment-input" placeholder="Введите ваш комментарий" required></textarea>
+            <button id="submit-button">Отправить комментарий</button>
+        </div>
+        <br />
+        <br />
+        <br />
+       
+        <a href="base.html" class="return-link">Вернуться на главную</a>
+    </div>
+
+    <script>
+     
+        var expandButton = document.getElementById("expand-button");
+        var commentForm = document.getElementById("comment-form");
+
+        expandButton.addEventListener("click", function () {
+            expandButton.style.display = "none";
+            commentForm.style.display = "flex";
+        });
+
+        document.getElementById("submit-button").addEventListener("click", function () {
+           
+            var expandButton = document.getElementById("expand-button");
+            var commentForm = document.getElementById("comment-form");
+
+            expandButton.addEventListener("click", function () {
+                expandButton.style.display = "none";
+                commentForm.style.display = "flex";
+            });
+
+            document.getElementById("submit-button").addEventListener("click", function () {
+                var nickname = document.getElementById("nickname-input").value;
+                var commentText = document.getElementById("comment-input").value;
+
+                if (nickname.trim() === "" || commentText.trim() === "") {
+                    alert("Please fill in all the required fields.");
+                    return;
+                }
+
+                var newCommentElement = document.createElement("div");
+                newCommentElement.classList.add("comment");
+                var commentImage = document.createElement("img");
+                commentImage.src = "path_to_user_image.jpg"; 
+                commentImage.alt = "User Image";
+                var commentContent = document.createElement("div");
+                commentContent.classList.add("comment-content");
+                var commentNickname = document.createElement("p");
+                commentNickname.innerText = nickname;
+                var commentTextParagraph = document.createElement("p");
+                commentTextParagraph.innerText = commentText;
+
+                commentContent.appendChild(commentNickname);
+                commentContent.appendChild(commentTextParagraph);
+
+                newCommentElement.appendChild(commentImage);
+                newCommentElement.appendChild(commentContent);
+
+                var commentsContainer = document.querySelector(".comments-container");
+                commentsContainer.insertBefore(newCommentElement, expandButton);
+
+                document.getElementById("nickname-input").value = "";
+                document.getElementById("comment-input").value = "";
+
+                expandButton.style.display = "block";
+                commentForm.style.display = "none";
+            });
+
+        });
+    </script>
+   
+</body>
+</html>
